@@ -1,5 +1,6 @@
 # cse210-student-template
-This is the starter code for students in CSE 210.
+This is the starter code for Benjamin T. Quiñones in CSE 210.
+Ben is committed to work hard in CSE 210 so that he can master at least the basics of C#!
 
 This repository contains the starter code for many different projects. They are arranged as follows:
 
