@@ -4,10 +4,12 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.Write("What is the magic number? (Integers Only)");
+        Console.Write("What is the magic number? (Integers Only) ");
         int magicNum = int.Parse(Console.ReadLine());
 
-        Console.Write("What is your guess? (Integers Only)");
+
+        
+        Console.Write("What is your guess? (Integers Only) ");
         int guessNum = int.Parse(Console.ReadLine());
 
         if (guessNum < magicNum)
