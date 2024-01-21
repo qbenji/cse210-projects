@@ -45,6 +45,7 @@ if (x > y)
 string school = "BYU-Idaho";
 Console.WriteLine($"I am studying at {school}.");
 
+//// IFS
 // Nested IF
 if (x > y)
 {
@@ -53,7 +54,6 @@ if (x > y)
         Console.WriteLine("greater than both");
     }
 }
-
 // IF . ELSE IF . ELSE
 if (x > y)
 {
@@ -68,7 +68,7 @@ else
     Console.WriteLine("less than both");
 }
 
-// Converting Variable Types
+//// Converting Variable Types
 string valueInText = "42";
 int number = int.Parse(valueInText);
 
@@ -78,16 +78,14 @@ int number = int.Parse(userInput);
 
 int number = 42;
 string textVersion = number.ToString();
-
+//// Loops
 // While Loops
 string response = "yes";
-
 while (response == "yes")
 {
     Console.Write("Do you want to continue? ");
     response = Console.ReadLine();
 }
-
 // Do-While Loops
 string response;
 do
@@ -95,25 +93,22 @@ do
     Console.Write("Do you want to continue? ");
     response = Console.ReadLine();
 } while (response == "yes");
-
 // For Loops
 for (int i = 0; i < 10; i++)
 {
     Console.WriteLine(i);
 }
-
 for (int i = 2; i <= 20; i = i + 2)
 {
     Console.WriteLine(i);
 }
-
 // Foreach Loops
 foreach (string color in colors)
 {
     Console.WriteLine(color);
 }
 
-// Random Numbers
+//// Random Numbers
 Random randomGenerator = new Random();
 int number = randomGenerator.Next(1, 11);
 
@@ -155,3 +150,55 @@ for (int i = 0; i < words.Count; i++)
 {
     Console.WriteLine(words[i]);
 }
+
+//// Functions
+// Structure
+returnType FunctionName(dataType parameter1, dataType parameter2)
+{
+    // function_body
+}
+// Void - no parameters
+void DisplayMessage()
+{
+    Console.WriteLine("Hello world!");
+}
+// Single string parameter
+void DisplayPersonalMessage(string userName)
+{
+    Console.WriteLine($"Hello {userName}");
+}
+// Two int parameter
+int AddNumbers(int first, int second)
+{
+    int sum = first + second;
+    return sum;
+}
+
+//// Functions vs Methods
+/* From previous courses, you may recall a distinction between standalone functions and member functions, which are called methods. 
+Methods play a very important role in Programming with Classes and they will be discussed at length in the coming lessons.
+In C#, because the language is so dedicated to the principles of Programming with Classes, the default case for all functions is to be methods,
+which must be called in the context of an object. (Again, more on this later!) But this has an important ramification for you now.
+If you want to define "regular" standalone function, you need to use the static keyword. This tells C# that you want your functions 
+to be able to be called without any other context.
+*/
+// Standalone Function
+static void DisplayMessage()
+{
+    Console.WriteLine("Hello world!");
+}
+
+static void DisplayPersonalMessage(string userName)
+{
+    Console.WriteLine($"Hello {userName}");
+}
+
+static int AddNumbers(int first, int second)
+{
+    int sum = first + second;
+    return sum;
+}
+/* Until we start writing classes, you should put the static keyword in front of all your functions. 
+Use static for all of your functions until we start writing classes.
+*/
+
