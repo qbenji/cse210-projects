@@ -4,7 +4,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Enter a list of integers (positive or negative), type 0 when finished.");
+        Console.WriteLine("\nEnter a list of integers (positive or negative), type 0 when finished.");
         List<int> numbers = new List<int>();
         int number = 1;
     
@@ -12,13 +12,18 @@ class Program
         {
             Console.Write("Enter a number: ");
             number = int.Parse(Console.ReadLine());
-            numbers.Add(number);
+            if (number != 0)
+            {
+                numbers.Add(number);
+            }
         }
-        Console.WriteLine($"Sum: {numbers.Sum()}\nAverage: {numbers.Average()}\nMaximum: {numbers.Max()}");
+        Console.WriteLine($"\nSum: {numbers.Sum()}\nAverage: {numbers.Average()}\nMaximum: {numbers.Max()}");
 
         // Stretch
         numbers.Sort();
         int leastPositive = 999999999;
+
+        Console.WriteLine("\nSorted List: ");
         foreach (int num in numbers)
         {
             Console.WriteLine(num);
@@ -27,7 +32,7 @@ class Program
                 leastPositive = num;
             }
         }
-        Console.WriteLine($"Least Positive: {leastPositive}");
+        Console.WriteLine($"\nLeast Positive: {leastPositive}");
         
         /* 👇 Alternate code to meet core 👇
         int numCount = 0;
