@@ -116,3 +116,42 @@ foreach (string color in colors)
 // Random Numbers
 Random randomGenerator = new Random();
 int number = randomGenerator.Next(1, 11);
+
+//// Lists
+List<int> numbers;
+List<string> words;
+// The code above declares a variable to hold the list, but before you can use one, you need to create a new one to use with the new keyword.
+List<int> numbers;
+numbers = new List<int>();
+// This is typically done on the same line:
+List<int> numbers = new List<int>();
+List<string> words = new List<string>();
+// Notice the extra parentheses () at the end, that we use any time we create a new object.
+/* One more important thing to be aware of: Any file that uses Lists (or any other standard collection), 
+must refer to that library at the top of the file. (This is so common that sometimes your settings 
+for C# can be specified so that you do not not have include this, but it is important to know about it, 
+in case you run into problems.)
+*/
+using System.Collections.Generic;
+/* What is "new" and why do we need it?
+It turns out that List is a class or custom data type and we are creating a new object or instance of that class. 
+This is actually the complete focus of this course, and beginning next week you will learn how to create your very own custom classes.
+With this in mind, you will learn much more about this in coming weeks, but for now, just remember to include new before you start using a list.
+*/
+// Add items to list
+using System.Collections.Generic;
+List<string> words = new List<string>();
+words.Add("phone");
+words.Add("keyboard");
+words.Add("mouse");
+// Get list size
+Console.WriteLine(words.Count);
+// Iterate through list
+foreach (string word in words)
+{
+    Console.WriteLine(word);
+}
+for (int i = 0; i < words.Count; i++)
+{
+    Console.WriteLine(words[i]);
+}
