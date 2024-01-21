@@ -90,7 +90,6 @@ while (response == "yes")
 
 // Do-While Loops
 string response;
-
 do
 {
     Console.Write("Do you want to continue? ");
