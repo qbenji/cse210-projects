@@ -10,4 +10,12 @@ public class PromptGenerator
         "What was the strongest emotion I felt today?",
         "If I had one thing I could do over today, what would it be?"
     };
+
+    
+    public string GetRandomPrompt()
+    {
+        Random random = new Random();
+        int index = random.Next(_prompts.Length);
+        return _prompts[index];
+    }
 }
