@@ -3,13 +3,30 @@ using System;
 public class Journal
 {
     public List<Entry> _entries = new List<Entry>();
-
+    public PromptGenerator promptGenerator = new PromptGenerator();
+    public Entry entry = new Entry();
     public bool _loaded = false;
 
-    public void AddEntry(Entry entry)
+    public void AddEntry()
     {
-        _entries.Add(entry); 
+        string prompt = "";
+        string likePrompt = "";
+        while (likePrompt != "y")
+        {
+            prompt = promptGenerator.GetRandomPrompt();
+            Console.WriteLine($"\n{prompt}");
+            Console.Write("Keep Prompt? (y for yes): ");
+            likePrompt = Console.ReadLine();
+        }
 
+        Console.Write("> ");
+        string response = Console.ReadLine();
+        
+        entry._prompt = prompt;
+        entry._response = response;
+        entry._entryDate = DateTime.Now;
+
+        _entries.Add(entry); 
     }
 
     public void DisplayEntries()

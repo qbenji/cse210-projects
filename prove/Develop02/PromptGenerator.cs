@@ -78,7 +78,6 @@ public class PromptGenerator
         "You have been temporarily blinded by a bright light. When your vision clears, what do you see?"
     };
 
-    
     public string GetRandomPrompt()
     {
         Random random = new Random();
