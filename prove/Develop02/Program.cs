@@ -41,10 +41,10 @@ class Program
                     journal.SaveEntries();
                     break;
                 case 5:
-                    Console.WriteLine("Goodbye");
+                    Console.WriteLine("You are now exiting the program. Goodbye.");
                     break;
                 default:
-                    Console.WriteLine("Invalid choice");
+                    Console.WriteLine("Invalid Choice, try again.");
                     break;
             }
         }

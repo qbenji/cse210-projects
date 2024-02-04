@@ -8,7 +8,7 @@ public class Journal
 
     public void AddEntry(Entry entry)
     {
-        _entries.Add(entry);  
+        _entries.Add(entry); 
 
     }
 
@@ -40,11 +40,11 @@ public class Journal
         {
             foreach (Entry entry in _entries)
             {
-                writer.WriteLine($"{entry._entryDate};;{entry._prompt};;{entry._response}");
+                writer.WriteLine($"{entry._entryDate}%%{entry._prompt}%%{entry._response}");
             }
         }
 
-        Console.WriteLine($"Journal saved successfully to {filename}");
+        Console.WriteLine($"Journal saved to {filename}");
     }
 
 
@@ -58,22 +58,22 @@ public class Journal
         {
             using (StreamReader reader = new StreamReader(filename))
             {
-                    string line;
-                    while ((line = reader.ReadLine()) != null) // Read the next line until no lines left
-                    {
-                            string[] parts = line.Split(new string[] { ";;" }, StringSplitOptions.None);
-                    
-                            Entry entry = new Entry();
-                            entry._entryDate = DateTime.Parse(parts[0]);
-                            entry._prompt = parts[1];
-                            entry._response = parts[2];
-                            _entries.Add(entry);
+                string line;
+                while ((line = reader.ReadLine()) != null) // Read until nothing to read
+                {
+                        string[] parts = line.Split(new string[] { "%%" }, StringSplitOptions.None);
+                
+                        Entry entry = new Entry();
+                        entry._entryDate = DateTime.Parse(parts[0]);
+                        entry._prompt = parts[1];
+                        entry._response = parts[2];
+                        _entries.Add(entry);
 
-                    }
+                }
             }
 
             Console.WriteLine($"Journal loaded successfully from {filename}");
-            _loaded = true; // mark that the journal has been loaded and current entries can be added to file
+            _loaded = true; // Marker for a file having been loaded
         }
         else
         {
