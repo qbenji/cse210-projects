@@ -11,6 +11,7 @@ public class Journal
     {
         string prompt = "";
         string likePrompt = "";
+
         while (likePrompt != "y")
         {
             prompt = promptGenerator.GetRandomPrompt();
@@ -25,7 +26,6 @@ public class Journal
         entry._prompt = prompt;
         entry._response = response;
         entry._entryDate = DateTime.Now;
-
         _entries.Add(entry); 
     }
 
@@ -78,13 +78,13 @@ public class Journal
                 string line;
                 while ((line = reader.ReadLine()) != null) // Read until nothing to read
                 {
-                        string[] parts = line.Split(new string[] { "%%" }, StringSplitOptions.None);
-                
-                        Entry entry = new Entry();
-                        entry._entryDate = DateTime.Parse(parts[0]);
-                        entry._prompt = parts[1];
-                        entry._response = parts[2];
-                        _entries.Add(entry);
+                    string[] parts = line.Split(new string[] { "%%" }, StringSplitOptions.None);
+            
+                    Entry entry = new Entry();
+                    entry._entryDate = DateTime.Parse(parts[0]);
+                    entry._prompt = parts[1];
+                    entry._response = parts[2];
+                    _entries.Add(entry);
 
                 }
             }
