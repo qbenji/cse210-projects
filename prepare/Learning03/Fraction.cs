@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using System.Runtime.CompilerServices;
 
 public class Fraction
@@ -43,13 +44,13 @@ public class Fraction
         _bottom = bottom;
     }
 
-    public void GetFraction()
+    public string GetFractionString()
     {   
-        
-    }
+        return $"{_top}/{_bottom}";
+    } 
 
-    public void GetDecimalValue()
+    public double GetDecimalValue()
     {
-
+        return _top / _bottom;
     }
 }
