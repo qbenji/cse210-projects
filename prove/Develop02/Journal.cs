@@ -48,8 +48,8 @@ public class Journal
             string overwrite = Console.ReadLine();
             if (overwrite != "y")
             {
-                    Console.WriteLine("Journal not saved.");
-                    return;
+                Console.WriteLine("Journal not saved.");
+                return;
             }
         }
 
