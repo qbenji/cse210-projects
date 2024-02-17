@@ -20,9 +20,9 @@ public class Word
     public void HideWord()
     {
         _hidden = true;
-        foreach (char letter in _word)
+        for (int i = 0; i < _letters.Count; i++)
         {
-            _letters.Add('_');
+            _letters[i] = '_';
         }
         _word = new string(_letters.ToArray());
     }

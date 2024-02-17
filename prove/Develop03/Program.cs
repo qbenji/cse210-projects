@@ -30,6 +30,11 @@ class Program
                 words[index] = w.GetWord();
                 Console.Write($"{words[index]} ");
                 index += 1;
+                /*for (int i = 0; i < words.Length; i++)
+                {
+                    
+                }
+                */
             }
         }
     }   
