@@ -6,7 +6,6 @@ class Program
     {
         Reference _ref = new Reference();
         Scripture _scrip = new Scripture();
-        Console.Write($"{_ref.GetReference()} ");
-        _scrip.GetScripture();
+        Console.Write($"{_ref.GetReference()} {_scrip.GetScripture()} ");
     }   
 }
