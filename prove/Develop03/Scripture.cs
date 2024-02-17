@@ -1,3 +1,5 @@
+using System;
+
 public class Scripture
 {
     private string _scripture;
@@ -18,7 +20,7 @@ public class Scripture
         
         foreach (string word in _scriptureWords)
         {
-            Console.Write(word);
+            Console.Write($"{word} ");
         }
     }
 }

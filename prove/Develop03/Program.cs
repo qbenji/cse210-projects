@@ -5,6 +5,8 @@ class Program
     static void Main(string[] args)
     {
         Reference _ref = new Reference();
-        Console.WriteLine($"{_ref.GetReference()}");
-    }
+        Scripture _scrip = new Scripture();
+        Console.Write($"{_ref.GetReference()} ");
+        _scrip.GetScripture();
+    }   
 }
