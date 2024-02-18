@@ -13,6 +13,7 @@ public class Scripture
 
     public Scripture()
     {
+        _reference = new Reference();
         _scripture = "Trust in the Lord with all thine heart; and lean not unto thine own understanding. In all thy ways acknowledge him, and he shall direct thy paths.";
         _scriptureWords = _scripture.Split(" ");
         for (int i = 0; i < _scriptureWords.Length; i++)
@@ -23,6 +24,32 @@ public class Scripture
 
     public Scripture(string scripture)
     {
+        string book;
+        string chapter;
+        string verseNum;
+        string endVerseNum;
+        string question;
+
+        Console.Write("Enter Book: ");
+        book = Console.ReadLine();
+        Console.Write("Enter Chapter: ");
+        chapter = Console.ReadLine();
+        Console.Write("Enter Verse Start Number: ");
+        verseNum = Console.ReadLine();
+        Console.Write("Is there more than one Verse? (y/n): ");
+        question = Console.ReadLine();
+    
+        if (question == "y")
+        {
+            Console.Write("Enter Verse End Number: ");
+            endVerseNum = Console.ReadLine();
+            _reference = new Reference(book, chapter, verseNum, endVerseNum);
+        }
+        else
+        {
+           _reference = new Reference(book, chapter, verseNum); 
+        }
+
         _scripture = scripture;
         _scriptureWords = _scripture.Split(" ");
         for (int i = 0; i < _scriptureWords.Length; i++)
@@ -51,10 +78,14 @@ public class Scripture
             do
             {
                 iRandom = random.Next(_scriptureWords.Length);
-            } while (_scriptureWordsTracker[iRandom] == true && _allHidden == false);
+            } while (_scriptureWordsTracker[iRandom] == true && IsAllHidden() == false);
+            if (IsAllHidden() == true)
+            {
+                break;
+            }
             Word w = new Word(_scriptureWords[iRandom]);
             w.Hide();
-            _scriptureWordsTracker[iRandom] = true;
+            _scriptureWordsTracker[iRandom] = w.IsHidden();
             _scriptureWords[iRandom] = w.GetRenderedText();
         }
         _scripture = String.Join(" ", _scriptureWords);
