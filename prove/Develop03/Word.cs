@@ -17,7 +17,7 @@ public class Word
         }
     }
 
-    public void HideWord()
+    public void Hide()
     {
         _hidden = true;
         for (int i = 0; i < _letters.Count; i++)
@@ -27,18 +27,18 @@ public class Word
         _word = new string(_letters.ToArray());
     }
 
-    public void ShowWord()
+    public void Show()
     {
         _hidden = false;
         _word = _backupWord;
     }
 
-    public bool HiddenCheck()
+    public bool IsHidden()
     {
         return _hidden;
     }
 
-    public string GetWord()
+    public string GetRenderedText()
     {
         return _word;
     }
