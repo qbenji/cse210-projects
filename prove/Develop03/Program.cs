@@ -5,24 +5,29 @@ class Program
     static void Main(string[] args)
     {
         int choice = 1;
-        Console.WriteLine("Welcome to the Scripture Memorizer!\n");
+        string quit;
 
         while (choice != 2)
-        {
+        {   
             Scripture scripture = new Scripture();
 
+            Console.WriteLine("Welcome to the Scripture Memorizer!");
             Console.Write("\n 1. Play \n 2. Quit\n> ");
             choice = int.Parse(Console.ReadLine());
             switch (choice)
             {
                 case 1:
-                    string quit = "";
-                    while (quit != "quit")
-                    {
+                    Console.WriteLine($"\n{scripture.Display()}");
+                    Console.WriteLine("\nPress enter to start mastering or type 'quit' to exit: ");
+                    quit = Console.ReadLine();
+
+                    while (quit != "quit" && scripture.IsAllHidden() == false)
+                    {   
+                        Console.Clear();
+                        scripture.HideWords();
                         Console.WriteLine(scripture.Display());
                         Console.WriteLine("\nPress enter to start mastering or type 'quit' to exit: ");
                         quit = Console.ReadLine();
-                        scripture.HideWords();
                     }
                     break;
 
