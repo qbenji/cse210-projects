@@ -12,20 +12,12 @@ public class Scripture
     {
         _scripture = "Trust in the Lord with all thine heart; and lean not unto thine own understanding. In all thy ways acknowledge him, and he shall direct thy paths.";
         _scriptureWords = _scripture.Split(" ");
-        for (int i = 0; i < _scriptureWords.Length; i++)
-        {
-            _scriptureWordsTracker[i] = false;
-        }
     }
 
     public Scripture(string scripture)
     {
         _scripture = scripture;
         _scriptureWords = _scripture.Split(" ");
-        for (int i = 0; i < _scriptureWords.Length; i++)
-        {
-            _scriptureWordsTracker[i] = false;
-        }
     }
 
     public void HideWords()

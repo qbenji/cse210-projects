@@ -19,13 +19,13 @@ class Program
                     string quit = "";
                     while (quit != "quit")
                     {
-                        scripture.Display();
+                        Console.WriteLine(scripture.Display());
                         Console.WriteLine("\nPress enter to start mastering or type 'quit' to exit: ");
                         quit = Console.ReadLine();
                         scripture.HideWords();
                     }
                     break;
-                    
+
                 case 2:
                     Console.WriteLine("\nYou are now exiting the program. Goodbye.");
                     break;
