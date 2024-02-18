@@ -7,6 +7,7 @@ public class Word
     private string _backupWord;
     private List<char> _letters = new List<char>();
     private bool _hidden = false;
+    
     public Word(string word)
     {
         _word = word;

@@ -6,6 +6,7 @@ public class Reference
     private string _chapter;
     private string _verseNum;
     private string _endVerseNum;
+    
     public Reference()
     {
         _book = "Proverbs";
@@ -13,12 +14,14 @@ public class Reference
         _verseNum = "5";
         _endVerseNum = "6";
     }
+
     public Reference(string book, string chapter, string verseNum)
     {
         _book = book;
         _chapter = chapter;
         _verseNum = verseNum;
     }
+
     public Reference(string book, string chapter, string verseNum, string endVerseNum)
     {
         _book = book;
