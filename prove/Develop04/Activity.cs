@@ -1,8 +1,8 @@
 public class Activity
 {
-    private string _activityName;
-    private string _activityDesc;
-    private int _duration;
+    protected string _activityName;
+    protected string _activityDesc;
+    protected int _duration;
 
     public Activity(string activityName, string activityDesc)
     {
@@ -30,11 +30,11 @@ public class Activity
 
     public void Spinner()
     {
-
+        
     }
 
     public void Timer()
     {
-        
+
     }
 }
