@@ -37,6 +37,35 @@ public class Activity
     {
 
     }
+ 
+    public void SetName(string activityName)                // set activity name
+    {
+        _activityName = activityName;
+    }
+ 
+    public void SetActivityDescription(string activityDesc) // set description
+    {
+        _activityDesc = activityDesc;
+    }
 
-    public void 
+    public void SetDuration(int duration)                   // set duration in seconds
+    {
+        _duration = duration;
+    }
+   
+   public string GetName()                                  // activity name
+    {
+        return _activityName;
+    }
+
+    public string GetActivityDescription()                  // activity description
+    {
+        return _activityDesc;
+    }
+    
+    public int GetDuration()                                // duration in seconds
+    {
+        return _duration;
+    }
+
 }
