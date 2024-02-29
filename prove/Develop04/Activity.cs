@@ -1,8 +1,8 @@
 public class Activity
 {
-    protected string _activityName;
-    protected string _activityDesc;
-    protected int _duration;
+    private string _activityName;
+    private string _activityDesc;
+    private int _duration;
 
     public Activity(string activityName, string activityDesc)
     {
@@ -18,12 +18,12 @@ public class Activity
         _duration = duration;
     }
 
-    public void DisplayStart()
+    public void DisplayStartingMessage()
     {
 
     }
 
-    public void DisplayEnd()
+    public void DisplayEndingMessage()
     {
 
     }
@@ -37,4 +37,6 @@ public class Activity
     {
 
     }
+
+    public void 
 }
