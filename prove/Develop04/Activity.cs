@@ -1,3 +1,6 @@
+using System.Formats.Asn1;
+using System.Runtime.CompilerServices;
+
 public class Activity
 {
     private string _activityName;
@@ -20,21 +23,25 @@ public class Activity
         _duration = duration;
     }
 
-    public void DisplayStartingMessage()
+    public void DisplayStart()
     {
-
+        Console.WriteLine($"Welcome to the {_activityName}!\n\n{_activityDesc}\n\nHow long, in seconds, would you like for your session? ");
+        int answer = int.Parse(Console.ReadLine());
+        SetDuration(answer);
+        Console.WriteLine($"\nGet ready! \n");
+        Spinner(5);
     }
 
-    public void DisplayEndingMessage()
+    public void DisplayEnd()
     {
-
+        Console.WriteLine($"Well done!!\n\nYou completed the {_activityName} in {_duration} seconds!");
     }
 
-    public void Spinner()
+    public void Spinner(int seconds)
     {
         List<string> spinner = new List<string>() {"|", "/", "-", "\\", "|"};
         startTime = DateTime.Now;
-        endTime = startTime.AddSeconds(_duration);
+        endTime = startTime.AddSeconds(seconds);
         int i = 0;
 
         while (DateTime.Now < endTime)
@@ -53,10 +60,10 @@ public class Activity
         }
     }
 
-    public void Timer()
+    public void DotBuffer(int seconds)
     {
         startTime = DateTime.Now;
-        endTime = startTime.AddSeconds(_duration);
+        endTime = startTime.AddSeconds(seconds);
         while (DateTime.Now < endTime)
         {
             Console.Write(".");
@@ -66,6 +73,15 @@ public class Activity
         Console.WriteLine("Done!");
     }
  
+    public void Timer(int seconds)
+    {
+        for (int i = seconds; i > 0; i--)
+        {   
+            Console.WriteLine(i);
+            Thread.Sleep(1000);
+        }
+    }
+
     public void SetName(string activityName)                // set activity name
     {
         _activityName = activityName;
