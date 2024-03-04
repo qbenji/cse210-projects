@@ -19,7 +19,7 @@ public class Activity
     public void DisplayStart()                              // display start message
     {
         Console.Clear();
-        Console.Write($"\nWelcome to the {_activityName}!\n\n{_activityDesc}\n\nHow long, in seconds, would you like for your session? ");
+        Console.Write($"Welcome to the {_activityName}!\n\n{_activityDesc}\n\nHow long, in seconds, would you like for your session? ");
         int answer = int.Parse(Console.ReadLine());
         SetDuration(answer);
         Console.Clear();
@@ -29,6 +29,7 @@ public class Activity
 
     public void DisplayEnd()                                // display end message
     {
+        Console.Clear();
         Console.Write($"Well done!! ");
         Spinner(2); 
         Console.Write($"\nYou completed the {_activityName} in {_duration} seconds!");
