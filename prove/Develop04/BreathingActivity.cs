@@ -23,6 +23,7 @@ public class BreathingActivity : Activity
         while (duration > 0)
         {
             BreathIn(4);
+            Console.Clear();
             BreathOut(6);
             duration -= 10;
             Console.Clear();
