@@ -9,13 +9,6 @@ public class Activity
     DateTime startTime;
     DateTime endTime;
 
-    public Activity(string activityName, string activityDesc)
-    {
-        _activityName = activityName;
-        _activityDesc = activityDesc;
-        _duration = 10;
-    }
-
     public Activity(string activityName, string activityDesc, int duration)
     {
         _activityName = activityName;
@@ -29,7 +22,7 @@ public class Activity
         int answer = int.Parse(Console.ReadLine());
         SetDuration(answer);
         Console.WriteLine($"\nGet ready! \n");
-        Spinner(5);
+        Spinner(10);
     }
 
     public void DisplayEnd()
@@ -82,7 +75,7 @@ public class Activity
         }
     }
 
-    public void SetName(string activityName)                // set activity name
+    public void SetActivityName(string activityName)                // set activity name
     {
         _activityName = activityName;
     }
@@ -97,7 +90,7 @@ public class Activity
         _duration = duration;
     }
    
-   public string GetName()                                  // activity name
+   public string GetActivityName()                                  // activity name
     {
         return _activityName;
     }
