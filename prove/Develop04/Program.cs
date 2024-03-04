@@ -51,7 +51,7 @@ class Program
 
                 case 4: // Quit
                     Console.Clear();
-                    Console.WriteLine("\nYou are now exiting the program. Goodbye.");
+                    Console.WriteLine("You are now exiting the program. Goodbye.");
                     break;
 
                 default: // invalid choice
