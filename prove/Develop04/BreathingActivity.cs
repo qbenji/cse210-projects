@@ -18,6 +18,7 @@ public class BreathingActivity : Activity
 
     public void Breathing()                 // breathing function
     {
+        Console.Clear();
         int duration = GetDuration();
         while (duration > 0)
         {
