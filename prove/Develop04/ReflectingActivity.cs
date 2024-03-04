@@ -15,7 +15,7 @@ public class ReflectingActivity : Activity
 
     public void Question()                                                                  // final prompt
     {
-        Console.WriteLine("Ponder on each of the following questions as they relate to the prompt.\n\nYou may begin in: ");
+        Console.Write("Ponder on each of the following questions as they relate to the prompt.\n\nYou may begin in: ");
         Timer(5);
         Console.Clear();
         int duration = GetDuration()/2;
