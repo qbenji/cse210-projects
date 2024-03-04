@@ -16,7 +16,7 @@ public class Activity
         _duration = duration;
     }
 
-    public void DisplayStart()
+    public void DisplayStart()                              // display start message
     {
         Console.WriteLine($"Welcome to the {_activityName}!\n\n{_activityDesc}\n\nHow long, in seconds, would you like for your session? ");
         int answer = int.Parse(Console.ReadLine());
@@ -25,12 +25,12 @@ public class Activity
         Spinner(10);
     }
 
-    public void DisplayEnd()
+    public void DisplayEnd()                                // display end message
     {
         Console.WriteLine($"Well done!!\n\nYou completed the {_activityName} in {_duration} seconds!");
     }
 
-    public void Spinner(int seconds)
+    public void Spinner(int seconds)                        // spinner function
     {
         List<string> spinner = new List<string>() {"|", "/", "-", "\\", "|"};
         startTime = DateTime.Now;
@@ -53,7 +53,7 @@ public class Activity
         }
     }
 
-    public void DotBuffer(int seconds)
+    public void DotBuffer(int seconds)                      // dot buffer function
     {
         startTime = DateTime.Now;
         endTime = startTime.AddSeconds(seconds);
@@ -66,7 +66,7 @@ public class Activity
         Console.WriteLine("Done!");
     }
  
-    public void Timer(int seconds)
+    public void Timer(int seconds)                          // timer function
     {
         for (int i = seconds; i > 0; i--)
         {   
@@ -75,7 +75,7 @@ public class Activity
         }
     }
 
-    public void SetActivityName(string activityName)                // set activity name
+    public void SetActivityName(string activityName)        // set activity name
     {
         _activityName = activityName;
     }
@@ -85,22 +85,22 @@ public class Activity
         _activityDesc = activityDesc;
     }
 
-    public void SetDuration(int duration)                   // set duration in seconds
+    public void SetDuration(int duration)                   // set duration
     {
         _duration = duration;
     }
    
-   public string GetActivityName()                                  // activity name
+   public string GetActivityName()                          // get activity name
     {
         return _activityName;
     }
 
-    public string GetActivityDescription()                  // activity description
+    public string GetActivityDescription()                  // get activity description
     {
         return _activityDesc;
     }
     
-    public int GetDuration()                                // duration in seconds
+    public int GetDuration()                                // get duration
     {
         return _duration;
     }
