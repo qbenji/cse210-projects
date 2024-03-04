@@ -1,6 +1,6 @@
 public class ReflectingPromptGenerator
 {
-    public string[] _prompts = new string[]
+    public string[] _prompts = new string[]         // array of prompts
     {
         "Think of a time when you stood up for someone else.",
         "Think of a time when you did something really difficult.",
@@ -8,7 +8,7 @@ public class ReflectingPromptGenerator
         "Think of a time when you did something truly selfless."
     };
 
-    public string[] _questionPrompts = new string[]
+    public string[] _questions = new string[]       // array of questions
     {
         "Why was this experience meaningful to you?",
         "Have you ever done anything like this before?",
@@ -21,17 +21,17 @@ public class ReflectingPromptGenerator
         "How can you keep this experience in mind in the future?"
     };
 
-    public string GetRandomPrompt()
+    public string GetRandomPrompt()                 // get random prompt
     {
         Random random = new Random();
         int index = random.Next(_prompts.Length);
         return _prompts[index];
     }
 
-    public string GetRandomQuestion()
+    public string GetRandomQuestion()               // get random question
     {
         Random random = new Random();
-        int index = random.Next(_questionPrompts.Length);
-        return _questionPrompts[index];
+        int index = random.Next(_questions.Length);
+        return _questions[index];
     }
 }
