@@ -30,12 +30,22 @@ public class Activity
 
     public void Spinner()
     {
-        
+        for (int i = 5; i > 0; i--)
+        {
+            Console.Write(i);
+            Thread.Sleep(1000);
+            Console.Write("\b \b");
+        }
     }
 
     public void Timer()
     {
-
+        for (int i = 5; i > 0; i--)
+        {
+            Console.Write(i);
+            Thread.Sleep(1000);
+            Console.Write("\b \b");
+        }   
     }
  
     public void SetName(string activityName)                // set activity name
