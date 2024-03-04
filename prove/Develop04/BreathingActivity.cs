@@ -16,7 +16,7 @@ public class BreathingActivity : Activity
         Timer(seconds);
     }
 
-    public void Breathing()
+    public void Breathing()                 // breathing function
     {
         int duration = GetDuration();
         while (duration > 0)
