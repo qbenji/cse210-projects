@@ -4,6 +4,7 @@ class Program
 {
     static void Main(string[] args)
     {
+        Console.Clear();
         int choice = 0;
         Console.Write("Welcome to the Mindfulness Program. Press enter to begin:");
         Console.ReadLine();
