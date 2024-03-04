@@ -3,6 +3,8 @@ public class Activity
     private string _activityName;
     private string _activityDesc;
     private int _duration;
+    DateTime startTime;
+    DateTime endTime;
 
     public Activity(string activityName, string activityDesc)
     {
@@ -30,22 +32,26 @@ public class Activity
 
     public void Spinner()
     {
-        for (int i = 5; i > 0; i--)
+        List<string> spinner = new List<string>() {"|", "/", "-", "\\", "|"};
+        foreach (string s in spinner)
         {
-            Console.Write(i);
-            Thread.Sleep(1000);
+            Console.Write(s);
+            Thread.Sleep(500);
             Console.Write("\b \b");
         }
     }
 
     public void Timer()
     {
-        for (int i = 5; i > 0; i--)
+        startTime = DateTime.Now;
+        endTime = startTime.AddSeconds(_duration);
+        while (DateTime.Now < endTime)
         {
-            Console.Write(i);
+            Console.Write(".");
             Thread.Sleep(1000);
             Console.Write("\b \b");
         }   
+        Console.WriteLine("Done!");
     }
  
     public void SetName(string activityName)                // set activity name
