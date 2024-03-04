@@ -22,7 +22,7 @@ public class Activity
         int answer = int.Parse(Console.ReadLine());
         SetDuration(answer);
         Console.WriteLine($"\nGet ready! \n");
-        Spinner(10);
+        Spinner(6);
     }
 
     public void DisplayEnd()                                // display end message
@@ -73,7 +73,7 @@ public class Activity
     {
         for (int i = seconds; i > 0; i--)
         {   
-            Console.WriteLine(i);
+            Console.Write(i);
             Thread.Sleep(1000);
             Console.Write("\b \b");
         }
