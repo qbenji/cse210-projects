@@ -30,7 +30,8 @@ public class Activity
         Console.WriteLine($"Well done!!");
         Spinner(2); 
         Console.WriteLine($"\nYou completed the {_activityName} in {_duration} seconds!\n");
-        Spinner(7);
+        Spinner(5);
+        Console.Clear();
     }
 
     public void Spinner(int seconds)                        // spinner function
