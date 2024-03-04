@@ -6,7 +6,7 @@ public class BreathingActivity : Activity
 
     public void BreathIn(int seconds)       // breath in function
     {
-        Console.Write("Breathe in... ");
+        Console.Write("Breathe In... ");
         Timer(seconds);
     }
 

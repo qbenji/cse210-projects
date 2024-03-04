@@ -22,7 +22,7 @@ public class Activity
         int answer = int.Parse(Console.ReadLine());
         SetDuration(answer);
         Console.Clear();
-        Console.WriteLine($"\nGet ready! \n");
+        Console.WriteLine($"Get ready! \n");
         Spinner(6);
     }
 
@@ -32,7 +32,6 @@ public class Activity
         Spinner(2); 
         Console.WriteLine($"\nYou completed the {_activityName} in {_duration} seconds!\n");
         Spinner(5);
-        Console.Clear();
     }
 
     public void Spinner(int seconds)                        // spinner function
