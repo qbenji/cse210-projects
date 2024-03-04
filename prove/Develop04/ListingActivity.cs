@@ -17,7 +17,7 @@ public class ListingActivity : Activity
         endTime = startTime.AddSeconds(duration);
         while (DateTime.Now < endTime)
         {
-            Console.WriteLine("> ");
+            Console.Write("> ");
             Console.ReadLine();
         }
     }
