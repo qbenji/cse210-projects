@@ -6,7 +6,7 @@ class Program
     {
         Console.Clear();
         int choice = 0;
-        Console.Write("Welcome to the Mindfulness Program. Press enter to begin:");
+        Console.Write("Welcome to the Mindfulness Program. Press enter to begin");
         Console.ReadLine();
         
         while (choice != 4)
