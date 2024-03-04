@@ -35,7 +35,6 @@ public class BreathingActivity : Activity
                 BreathIn(durationOne);
                 BreathOut(durationTwo);
                 duration -= duration;
-                Console.Clear();
             }
             else if (duration < 7 && duration > 0)
             {

@@ -9,13 +9,13 @@ public class ReflectingActivity : Activity
     public void Prompt()                                                                    // initial prompt
     {
         Console.Clear();
-        Console.WriteLine($"\n\n--- {rPromptGenerator.GetRandomPrompt()} ---\n\nWhen you have something in mind, press enter to continue.");
+        Console.Write($"--- {rPromptGenerator.GetRandomPrompt()} ---\n\nWhen you have something in mind, press enter to continue.");
         Console.ReadLine();
     }
 
     public void Question()                                                                  // final prompt
     {
-        Console.WriteLine("\nPonder on each of the following questions as they relate to the prompt.\n\nYou may begin in: ");
+        Console.WriteLine("Ponder on each of the following questions as they relate to the prompt.\n\nYou may begin in: ");
         Timer(5);
         Console.Clear();
         int duration = GetDuration()/2;
@@ -23,6 +23,5 @@ public class ReflectingActivity : Activity
         Spinner(duration);
         Console.WriteLine($"> {rPromptGenerator.GetRandomQuestion()}");
         Spinner(duration);
-        Console.Clear();
     }
 }
