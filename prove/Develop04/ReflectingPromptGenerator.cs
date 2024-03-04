@@ -28,7 +28,7 @@ public class ReflectingPromptGenerator
         return _prompts[index];
     }
 
-    public string GetRandomQuestionPrompt()
+    public string GetRandomQuestion()
     {
         Random random = new Random();
         int index = random.Next(_questionPrompts.Length);

@@ -27,7 +27,10 @@ public class Activity
 
     public void DisplayEnd()                                // display end message
     {
-        Console.WriteLine($"Well done!!\n\nYou completed the {_activityName} in {_duration} seconds!");
+        Console.WriteLine($"Well done!!");
+        Spinner(2); 
+        Console.WriteLine($"\n\nYou completed the {_activityName} in {_duration} seconds!");
+        Spinner(7);
     }
 
     public void Spinner(int seconds)                        // spinner function
