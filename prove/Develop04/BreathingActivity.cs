@@ -1,6 +1,6 @@
 public class BreathingActivity : Activity
 {
-    public BreathingActivity(string activityName, string activityDesc, int duration) 
+    public BreathingActivity(string activityName, string activityDesc, int duration)    // constructor
         : base(activityName, activityDesc, duration) 
     {}
 

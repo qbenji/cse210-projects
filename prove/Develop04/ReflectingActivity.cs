@@ -1,18 +1,18 @@
 public class ReflectingActivity : Activity
 {
-    public ReflectingActivity(string activityName, string activityDesc, int duration) 
+    public ReflectingActivity(string activityName, string activityDesc, int duration)       // constructor
         : base(activityName, activityDesc, duration) 
     {}
 
-    public ReflectingPromptGenerator rPromptGenerator = new ReflectingPromptGenerator();
+    public ReflectingPromptGenerator rPromptGenerator = new ReflectingPromptGenerator();    // pull in reflecting prompt generator
 
-    public void InitialPrompt()
+    public void Prompt()                                                                    // initial prompt
     {
         Console.WriteLine($"\n\n--- {rPromptGenerator.GetRandomPrompt()} ---\n\nWhen you have something in mind, press enter to continue.");
         Console.ReadLine();
     }
 
-    public void FinalPrompt()
+    public void Question()                                                                  // final prompt
     {
         Console.WriteLine("\n\nPonder on each of the following questions as they relate to the prompt.\n\nYou may begin in: ");
         Timer(5);
