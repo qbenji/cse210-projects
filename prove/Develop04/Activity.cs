@@ -33,11 +33,23 @@ public class Activity
     public void Spinner()
     {
         List<string> spinner = new List<string>() {"|", "/", "-", "\\", "|"};
-        foreach (string s in spinner)
+        startTime = DateTime.Now;
+        endTime = startTime.AddSeconds(_duration);
+        int i = 0;
+
+        while (DateTime.Now < endTime)
         {
+            string s = spinner[i];
             Console.Write(s);
             Thread.Sleep(500);
             Console.Write("\b \b");
+
+            i++;
+
+            if (i >= spinner.Count)
+            {
+                i = 0;
+            }
         }
     }
 
