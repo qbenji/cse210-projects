@@ -47,7 +47,7 @@ public class Activity
         {
             string s = spinner[i];
             Console.Write(s);
-            Thread.Sleep(500);
+            Thread.Sleep(250);
             Console.Write("\b \b");
 
             i++;
