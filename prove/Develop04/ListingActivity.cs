@@ -10,7 +10,7 @@ public class ListingActivity : Activity
     
     public void List()                                                              // list function
     {
-        Console.WriteLine($"\nList as many responses as you can to the following prompt:\n\n--- {lPromptGenerator.GetRandomPrompt()} ---\nYou may begin in: ");
+        Console.Write($"\nList as many responses as you can to the following prompt:\n\n--- {lPromptGenerator.GetRandomPrompt()} ---\nYou may begin in: ");
         Timer(5);
         int duration = GetDuration();
         startTime = DateTime.Now;
