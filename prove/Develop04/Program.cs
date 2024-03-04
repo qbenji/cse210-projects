@@ -10,7 +10,7 @@ class Program
         {   
             Console.Clear();
             Console.WriteLine("Welcome to the Mindfulness Program. Please select one of the following activities to begin a mindfulness session:");
-            Console.Write("\n  1. Breathing Activity\n  2. Reflection Activity\n  3. Lising Activity\n  4. Quit\n> ");
+            Console.Write("\n  1. Breathing Activity\n  2. Reflection Activity\n  3. Listing Activity\n  4. Quit\n> ");
             choice = int.Parse(Console.ReadLine());
 
             switch (choice)
