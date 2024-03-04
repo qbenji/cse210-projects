@@ -68,7 +68,7 @@ public class Activity
             Console.Write(".");
             Thread.Sleep(1000);
         }   
-        Console.WriteLine("Done!");
+        Console.Write("Done!");
     }
  
     public void Timer(int seconds)                          // timer function
