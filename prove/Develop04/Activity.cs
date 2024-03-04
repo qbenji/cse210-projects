@@ -22,7 +22,7 @@ public class Activity
         int answer = int.Parse(Console.ReadLine());
         SetDuration(answer);
         Console.Clear();
-        Console.WriteLine($"Get ready! \n");
+        Console.Write($"Get ready!");
         Spinner(6);
     }
 
