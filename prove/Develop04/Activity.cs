@@ -9,7 +9,7 @@ public class Activity
     DateTime startTime;
     DateTime endTime;
 
-    public Activity(string activityName, string activityDesc, int duration)
+    public Activity(string activityName, string activityDesc, int duration) // constructor
     {
         _activityName = activityName;
         _activityDesc = activityDesc;
