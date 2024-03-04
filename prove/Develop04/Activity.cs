@@ -18,7 +18,7 @@ public class Activity
 
     public void DisplayStart()                              // display start message
     {
-        Console.WriteLine($"Welcome to the {_activityName}!\n\n{_activityDesc}\n\nHow long, in seconds, would you like for your session? ");
+        Console.Write($"Welcome to the {_activityName}!\n\n{_activityDesc}\n\nHow long, in seconds, would you like for your session? ");
         int answer = int.Parse(Console.ReadLine());
         SetDuration(answer);
         Console.WriteLine($"\nGet ready! \n");
@@ -75,6 +75,7 @@ public class Activity
         {   
             Console.WriteLine(i);
             Thread.Sleep(1000);
+            Console.Write("\b \b");
         }
     }
 
