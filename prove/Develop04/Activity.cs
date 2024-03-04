@@ -67,7 +67,6 @@ public class Activity
         {
             Console.Write(".");
             Thread.Sleep(1000);
-            Console.Write("\b \b");
         }   
         Console.WriteLine("Done!");
     }
