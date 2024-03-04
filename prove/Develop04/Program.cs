@@ -5,7 +5,9 @@ class Program
     static void Main(string[] args)
     {
         int choice = 0;
-        Console.WriteLine("Welcome to the Mindfulness Program. Please select one of the following activities to begin a mindfulness session:");
+        Console.Write("Welcome to the Mindfulness Program. Press enter to begin:");
+        Console.ReadLine();
+        
         while (choice != 4)
         {   
             Console.Clear();
@@ -47,6 +49,7 @@ class Program
                     break;
 
                 case 4: // Quit
+                    Console.Clear();
                     Console.WriteLine("\nYou are now exiting the program. Goodbye.");
                     break;
 
