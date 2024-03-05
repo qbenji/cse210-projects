@@ -39,6 +39,7 @@ public class BreathingActivity : Activity
             else if (duration < 7 && duration > 0)
             {
                 Spinner(duration);
+                duration -= duration;
             }
         }
     }
