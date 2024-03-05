@@ -12,6 +12,7 @@ public class ListingActivity : Activity
     {
         Console.Write($"\nList as many responses as you can to the following prompt:\n\n--- {lPromptGenerator.GetRandomPrompt()} ---\nYou may begin in: ");
         Timer(5);
+        Console.WriteLine("\n");
         int duration = GetDuration();
         startTime = DateTime.Now;
         endTime = startTime.AddSeconds(duration);
