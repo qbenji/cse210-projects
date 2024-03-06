@@ -47,7 +47,7 @@ public class Activity
         {
             string s = spinner[i];
             Console.Write(s);
-            Thread.Sleep(250);
+            Thread.Sleep(100);
             Console.Write("\b \b");
 
             i++;
@@ -96,7 +96,7 @@ public class Activity
         _duration = duration;
     }
    
-   public string GetActivityName()                          // get activity name
+    public string GetActivityName()                         // get activity name
     {
         return _activityName;
     }
