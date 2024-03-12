@@ -1,4 +1,4 @@
-public class Checklist : Goal
+public class ChecklistGoal : Goal
 {
 
 
