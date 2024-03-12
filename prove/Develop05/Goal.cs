@@ -14,30 +14,55 @@ public class Goal
         _goalPoints = goalPoints;
     }
 
-    public string GetGoalName()     // get goal name
+    public string   GetGoalName()                   // get goal name
     {
         return _goalName;
     }
 
-    public string GetGoalDesc()     // get goal description
+    public string   GetGoalDesc()                   // get goal description
     {
         return _goalDesc;
     }
 
-    public int GetGoalNum()         // get goal number
+    public int      GetGoalNum()                    // get goal number
     {
         return _goalNum;
     }
 
-    public string GetGoalType()     // get goal type
+    public string   GetGoalType()                   // get goal type
     {
         return _goalType;
     }
 
-    public int GetGoalPoints()      // get goal points
+    public int      GetGoalPoints()                 // get goal points
     {
         return _goalPoints;
     }
 
-    
+    public void     SetGoalName(string goalName)    // set goal name
+    {
+        _goalName = goalName;
+    }
+
+    public void     SetGoalDesc(string goalDesc)    // set goal description
+    {
+        _goalDesc = goalDesc;
+    }
+
+    public void     SetGoalNum(int goalNum)         // set goal number
+    {
+        _goalNum = goalNum;
+    }
+
+    public void     SetGoalType(string goalType)    // set goal type
+    {
+        _goalType = goalType;
+    }
+
+    public void     SetGoalPoints(int goalPoints)   // set goal points
+    {
+        _goalPoints = goalPoints;
+    }
+
+
 }
