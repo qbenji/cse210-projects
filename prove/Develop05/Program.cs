@@ -98,9 +98,15 @@ class Program
                     loadFileName = $"{loadFileName}.txt";     
 
                     string[] lines = System.IO.File.ReadAllLines(loadFileName);
-                    
+                    bool isFirstLine = true;
                     foreach (string line in lines)
                     {   
+                        if (isFirstLine)
+                        {
+                            isFirstLine = false;
+                            continue;
+                        }
+                        
                         string[] parts = line.Split(':');
                         string goalType = parts[0];
                         string goalDetails = parts[1];
