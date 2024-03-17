@@ -17,7 +17,7 @@ public class ChecklistGoal : Goal
 
     public int GetCountToBonus()   // get count to bonus
     {
-        return _countToBonus
+        return _countToBonus;
     }
 
     public int GetBonusPoints()    // get bonus points
