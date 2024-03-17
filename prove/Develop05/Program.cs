@@ -14,7 +14,7 @@ class Program
         List<String> goals = new List<string>();
         List<String> serializedGoals = new List<string>();
         
-        while (choice != 4)
+        while (choice != 6)
         {   
             Console.WriteLine($"You have {points} points.\n");
             Console.WriteLine("Menu Options:");
