@@ -69,7 +69,9 @@ class Program
                     break;
 
                 case 3: // Save Goals
-                    string filename = "myFile.txt";
+                    Console.WriteLine("Enter the desired filename (.txt will be added automatically): ");
+                    string filename = Console.ReadLine();
+                    filename = $"{filename}.txt";
 
                     using (StreamWriter outputFile = new StreamWriter(filename))
                     {
