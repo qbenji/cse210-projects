@@ -1,5 +1,6 @@
 using System;
 using System.IO;
+using System.Reflection.Metadata;
 
 class Program
 {
@@ -92,9 +93,9 @@ class Program
                     loadFileName = $"{loadFileName}.txt";     
 
                     string[] lines = System.IO.File.ReadAllLines(loadFileName);
-
+                    
                     foreach (string line in lines)
-                    {
+                    {   
                         string[] parts = line.Split(':');
                         string goalType = parts[0];
                         string goalDetails = parts[1];
@@ -136,6 +137,64 @@ class Program
 
                 case 5: // Record Event
                     
+                    int i2 = 0;
+                    foreach (String goal in goals)
+                    {
+                        i2++;
+                        Console.WriteLine($"{i2+1}. {goal}");
+                    }                    
+
+                    Console.Write("Which goal did you accomplish? ");
+                    int targetGoal = int.Parse(Console.ReadLine());
+
+                    string serializedGoal = serializedGoals[targetGoal-1];
+                    string[] parts2 = serializedGoal.Split(':');
+                    string goalType2 = parts2[0];
+                    string goalDetails2 = parts2[1];
+
+                    string[] details2 = goalDetails2.Split(',');
+                    string goalName2 = details2[0];
+                    string goalDesc2 = details2[1];
+                    int goalPoints2 = int.Parse(details2[2]);
+                    bool isCompleted2 = bool.Parse(details2[3]);
+                    int bonusPoints2 = int.Parse(details2[4]);
+                    int countToBonus2 = int.Parse(details2[5]);
+                    int currentCount2 = int.Parse(details2[6]);
+
+                    points+=goalPoints2;
+
+                    switch (goalType2)
+                    {
+                        case "SimpleGoal":
+                            SimpleGoal sGoal = new SimpleGoal(goalName2, goalDesc2, goalPoints2, true);
+                            goals[targetGoal-1] = sGoal.RepresentGoal();
+                            serializedGoals[targetGoal-1] = sGoal.SerializeGoal();                           
+                            break;
+
+                        case "EternalGoal":
+                            EternalGoal eGoal = new EternalGoal(goalName2, goalDesc2, goalPoints2, isCompleted2);
+                            goals[targetGoal-1] = eGoal.RepresentGoal();
+                            serializedGoals[targetGoal-1] = eGoal.SerializeGoal();
+                            break;
+                        
+                        case "ChecklistGoal":
+                            Console.Write("How many times did you accomplish it? ");
+                            currentCount2 += int.Parse(Console.ReadLine());
+
+                            if (currentCount2>=countToBonus2)
+                            {
+                                points+=bonusPoints2;
+                                isCompleted2 = true;
+                            }
+
+                            ChecklistGoal cGoal = new ChecklistGoal(goalName2, goalDesc2, goalPoints2, isCompleted2, bonusPoints2, countToBonus2, currentCount2);
+                            goals[targetGoal-1] = cGoal.RepresentGoal();
+                            serializedGoals[targetGoal-1] = cGoal.SerializeGoal();
+                            break;
+
+                        default:
+                            break;           
+                    }
                     break;
 
                 case 6: // Quit
