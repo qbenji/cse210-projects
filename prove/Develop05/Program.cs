@@ -27,7 +27,7 @@ class Program
                 case 1: // Create New Goal
                     
                     Console.Clear();
-                    Console.Write("The types of Goals are:\n  1. Simple Goal\n  2. Eternal Goal\n  3. Checklist Goal\n\nWhich type of goal would you like to create? >");
+                    Console.Write("The types of Goals are:\n  1. Simple Goal\n  2. Eternal Goal\n  3. Checklist Goal\n\nWhich type of goal would you like to create? > ");
                     choice2 = int.Parse(Console.ReadLine());
                     switch (choice2)
                     {
