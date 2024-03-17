@@ -109,24 +109,26 @@ class Program
                         string goalName = details[0];
                         string goalDesc = details[1];
                         int goalPoints = int.Parse(details[2]);
-                        bool isCompleted = bool.Parse(details[3]);
 
                         switch (goalType)
                         {
                             case "SimpleGoal":
+                                string[] details00 = goalDetails.Split(',');
+                                bool isCompleted = bool.Parse(details00[3]);
                                 SimpleGoal sGoal = new SimpleGoal(goalName, goalDesc, goalPoints, isCompleted);
                                 goals.Add(sGoal.RepresentGoal());
                                 serializedGoals.Add(sGoal.SerializeGoal());                                
                                 break;
 
                             case "EternalGoal":
-                                EternalGoal eGoal = new EternalGoal(goalName, goalDesc, goalPoints, isCompleted);
+                                EternalGoal eGoal = new EternalGoal(goalName, goalDesc, goalPoints, false);
                                 goals.Add(eGoal.RepresentGoal());
                                 serializedGoals.Add(eGoal.SerializeGoal());
                                 break;
                             
                             case "ChecklistGoal":
                                 string[] details0 = goalDetails.Split(',');
+                                bool isCompleted = bool.Parse(details0[3]);
                                 int bonusPoints = int.Parse(details0[4]);
                                 int countToBonus = int.Parse(details0[5]);
                                 int currentCount = int.Parse(details0[6]);                            
@@ -171,7 +173,7 @@ class Program
 
                         case "EternalGoal":
                             string[] details3 = goalDetails2.Split(',');                     
-                            EternalGoal eGoal = new EternalGoal(details3[0], details3[1], int.Parse(details3[2]), bool.Parse(details3[3]));
+                            EternalGoal eGoal = new EternalGoal(details3[0], details3[1], int.Parse(details3[2]), false);
                             goals[targetGoal-1] = eGoal.RepresentGoal();
                             serializedGoals[targetGoal-1] = eGoal.SerializeGoal();
                             points+=eGoal.GetGoalPoints();
