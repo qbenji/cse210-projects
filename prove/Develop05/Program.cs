@@ -128,11 +128,11 @@ class Program
                             
                             case "ChecklistGoal":
                                 string[] details0 = goalDetails.Split(',');
-                                bool isCompleted = bool.Parse(details0[3]);
+                                bool isCompleted0 = bool.Parse(details0[3]);
                                 int bonusPoints = int.Parse(details0[4]);
                                 int countToBonus = int.Parse(details0[5]);
                                 int currentCount = int.Parse(details0[6]);                            
-                                ChecklistGoal cGoal = new ChecklistGoal(goalName, goalDesc, goalPoints, isCompleted, bonusPoints, countToBonus, currentCount);
+                                ChecklistGoal cGoal = new ChecklistGoal(goalName, goalDesc, goalPoints, isCompleted0, bonusPoints, countToBonus, currentCount);
                                 goals.Add(cGoal.RepresentGoal());
                                 serializedGoals.Add(cGoal.SerializeGoal());
                                 break;
