@@ -15,7 +15,7 @@ public abstract class Goal
         _isCompleted = isCompleted;
     }
 
-    public virtual void        CreateGoal()            // create goal
+    public virtual void         CreateGoal()            // create goal
     {
         Console.Clear();
         Console.Write("What is the name of your goal? > ");
@@ -26,7 +26,7 @@ public abstract class Goal
         SetGoalPoints(int.Parse(Console.ReadLine()));
     }
 
-    public virtual string      RepresentGoal()         // represent goal as string
+    public virtual string       RepresentGoal()         // represent goal as string
     {
         if (GetIsCompleted()==true)
         {
