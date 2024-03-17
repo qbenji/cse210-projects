@@ -1,7 +1,7 @@
 public class ChecklistGoal : Goal
 {
-    public ChecklistGoal(string goalName, string goalDesc, int goalNum)    // constructor
-        : base(goalName, goalDesc, duration) 
+    public ChecklistGoal(string goalName, string goalDesc, int goalNum, string goalType, int goalPoints)    // constructor
+        : base(goalName, goalDesc, goalNum, goalType, goalPoints) 
     {}
 
 
