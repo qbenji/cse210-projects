@@ -2,72 +2,55 @@ public class Goal
 {
     private string _goalName;       // goal name
     private string _goalDesc;       // goal description
-    private int _goalNum;           // goal number
-    private string _goalType;       // goal type
-    private int _goalPoints;        // points
-    public Goal(string goalName, string goalDesc, int goalNum, string goalType, int goalPoints) // constructor
+    private int _goalPoints;        // goal number
+
+    public Goal(string goalName, string goalDesc, int goalPoints)   // constructor
     {
         _goalName = goalName;
         _goalDesc = goalDesc;
-        _goalNum = goalNum;
-        _goalType = goalType;
         _goalPoints = goalPoints;
     }
 
-    public void     DisplayGoal()                   // display goal
+    public virtual string CreateGoal()
     {
-        Console.WriteLine($"{_goalNum}. {_goalName} ({_goalType}) - {_goalDesc} ({_goalPoints} points)");
+        Console.Clear();
+        Console.Write("What is the name of your goal? > ");
+        SetGoalName(Console.ReadLine());
+        Console.Write("What is a short description of it? > ");
+        SetGoalDesc(Console.ReadLine());
+        Console.Write("What is the amount of points associated with this goal? > ");
+        SetGoalPoints(int.Parse(Console.ReadLine()));
+        return "";
     }
 
-    public string   GetGoalName()                   // get goal name
+    public string   GetGoalName()                       // get goal name
     {
         return _goalName;
     }
 
-    public string   GetGoalDesc()                   // get goal description
+    public string   GetGoalDesc()                       // get goal description
     {
         return _goalDesc;
     }
 
-    public int      GetGoalNum()                    // get goal number
-    {
-        return _goalNum;
-    }
-
-    public string   GetGoalType()                   // get goal type
-    {
-        return _goalType;
-    }
-
-    public int      GetGoalPoints()                 // get goal points
+    public int      GetGoalPoints()                     // get goal number
     {
         return _goalPoints;
     }
 
-    public void     SetGoalName(string goalName)    // set goal name
+    public void     SetGoalName(string goalName)        // set goal name
     {
         _goalName = goalName;
     }
 
-    public void     SetGoalDesc(string goalDesc)    // set goal description
+    public void     SetGoalDesc(string goalDesc)        // set goal description
     {
         _goalDesc = goalDesc;
     }
 
-    public void     SetGoalNum(int goalNum)         // set goal number
-    {
-        _goalNum = goalNum;
-    }
-
-    public void     SetGoalType(string goalType)    // set goal type
-    {
-        _goalType = goalType;
-    }
-
-    public void     SetGoalPoints(int goalPoints)   // set goal points
+    public void     SetGoalPoints(int goalPoints)       // set goal number
     {
         _goalPoints = goalPoints;
     }
-
 
 }
