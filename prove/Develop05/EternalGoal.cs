@@ -8,4 +8,5 @@ public class EternalGoal : Goal
     {
         return $"EternalGoal:{GetGoalName()},{GetGoalDesc()},{GetGoalPoints()}";
     }
+    
 }

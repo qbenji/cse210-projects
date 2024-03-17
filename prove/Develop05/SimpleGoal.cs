@@ -4,9 +4,9 @@ public class SimpleGoal :Goal
         : base(goalName, goalDesc, goalPoints, isCompleted) 
     {}
 
-
     public override string SerializeGoal()      // serialize goal as string
     {
         return $"SimpleGoal:{GetGoalName()},{GetGoalDesc()},{GetGoalPoints()},{GetIsCompleted()}";
     }
+    
 }

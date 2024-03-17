@@ -15,7 +15,7 @@ public class ChecklistGoal : Goal
         _currentCount = currentCount;
     }
 
-    public override void CreateGoal()   // create goal
+    public override void        CreateGoal()   // create goal
     {
         Console.Clear();
         Console.Write("What is the name of your goal? > ");
@@ -30,7 +30,7 @@ public class ChecklistGoal : Goal
         SetBonusPoints(int.Parse(Console.ReadLine()));
     }
 
-    public override string   RepresentGoal()     // represent goal as string
+    public override string      RepresentGoal()     // represent goal as string
     {
         if (GetIsCompleted()==true)
         {
@@ -42,7 +42,7 @@ public class ChecklistGoal : Goal
         }
     }   
 
-    public override string   SerializeGoal()     // serialize goal as string
+    public override string      SerializeGoal()     // serialize goal as string
     {
         return $"ChecklistGoal:{GetGoalName()},{GetGoalDesc()},{GetGoalPoints()},{GetBonusPoints()},{GetCountToBonus()},{GetCurrentCount()}";
     } 
