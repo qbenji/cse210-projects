@@ -1,4 +1,5 @@
 using System;
+using System.IO;
 
 class Program
 {
@@ -9,6 +10,8 @@ class Program
         int points = 0;
         Console.Write("Welcome to the Goal-Points Tracker. Press enter to begin");
         Console.ReadLine();
+        List<String> goals = new List<string>();
+        List<String> serializedGoals = new List<string>();
         
         while (choice != 4)
         {   
@@ -31,16 +34,22 @@ class Program
                         case 1:         // Create Simple Goal
                             SimpleGoal sGoal = new SimpleGoal("Simple Goal", "This is a simple goal.",0,false);
                             sGoal.CreateGoal();
+                            goals.Add(sGoal.RepresentGoal());
+                            serializedGoals.Add(sGoal.SerializeGoal());
                             break;
 
                         case 2:         // Create Eternal Goal
                             EternalGoal eGoal = new EternalGoal("Simple Goal", "This is a simple goal.",0,false);
                             eGoal.CreateGoal();
+                            goals.Add(eGoal.RepresentGoal());
+                            serializedGoals.Add(eGoal.SerializeGoal());
                             break;
 
                         case 3:         // Create Checklist Goal
                             ChecklistGoal cGoal = new ChecklistGoal("Simple Goal", "This is a simple goal.",0,false,0,0,0);
-                            cGoal.CreateGoal();                           
+                            cGoal.CreateGoal();
+                            goals.Add(cGoal.RepresentGoal());      
+                            serializedGoals.Add(cGoal.SerializeGoal());             
                             break;
 
                         default:        // Invalid Choice
@@ -51,11 +60,25 @@ class Program
                     break;
 
                 case 2: // List Goals
-                    
+                    int i = 0;
+                    foreach (String goal in goals)
+                    {
+                        i++;
+                        Console.WriteLine($"{i}. {goal}");
+                    }
                     break;
 
                 case 3: // Save Goals
-                    
+                    string filename = "myFile.txt";
+
+                    using (StreamWriter outputFile = new StreamWriter(filename))
+                    {
+                        outputFile.WriteLine(points);
+                        foreach (String goal in serializedGoals)
+                        {
+                            outputFile.WriteLine(goal);
+                        }
+                    }
                     break;
 
                 case 4: // Load Goals
