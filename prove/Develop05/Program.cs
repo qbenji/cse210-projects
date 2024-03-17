@@ -147,7 +147,7 @@ class Program
                     foreach (String goal in goals)
                     {
                         i2++;
-                        Console.WriteLine($"{i2+1}. {goal}");
+                        Console.WriteLine($"{i2}. {goal}");
                     }                    
 
                     Console.Write("Which goal did you accomplish? ");
@@ -158,32 +158,30 @@ class Program
                     string goalType2 = parts2[0];
                     string goalDetails2 = parts2[1];
 
-                    string[] details2 = goalDetails2.Split(',');
-                    string goalName2 = details2[0];
-                    string goalDesc2 = details2[1];
-                    int goalPoints2 = int.Parse(details2[2]);
-                    bool isCompleted2 = bool.Parse(details2[3]);
-                    int bonusPoints2 = int.Parse(details2[4]);
-                    int countToBonus2 = int.Parse(details2[5]);
-                    int currentCount2 = int.Parse(details2[6]);
-
-                    points+=goalPoints2;
-
                     switch (goalType2)
                     {
                         case "SimpleGoal":
-                            SimpleGoal sGoal = new SimpleGoal(goalName2, goalDesc2, goalPoints2, true);
+                            string[] details2 = goalDetails2.Split(',');                      
+                            SimpleGoal sGoal = new SimpleGoal(details2[0], details2[1], int.Parse(details2[2]), true);
                             goals[targetGoal-1] = sGoal.RepresentGoal();
-                            serializedGoals[targetGoal-1] = sGoal.SerializeGoal();                           
+                            serializedGoals[targetGoal-1] = sGoal.SerializeGoal();
+                            points+=sGoal.GetGoalPoints();                           
                             break;
 
                         case "EternalGoal":
-                            EternalGoal eGoal = new EternalGoal(goalName2, goalDesc2, goalPoints2, isCompleted2);
+                            string[] details3 = goalDetails2.Split(',');                     
+                            EternalGoal eGoal = new EternalGoal(details3[0], details3[1], int.Parse(details3[2]), bool.Parse(details3[3]));
                             goals[targetGoal-1] = eGoal.RepresentGoal();
                             serializedGoals[targetGoal-1] = eGoal.SerializeGoal();
+                            points+=eGoal.GetGoalPoints();
                             break;
                         
                         case "ChecklistGoal":
+                            string[] details4 = goalDetails2.Split(',');
+                            bool isCompleted2 = bool.Parse(details4[3]);
+                            int bonusPoints2 = int.Parse(details4[4]);
+                            int countToBonus2 = int.Parse(details4[5]);
+                            int currentCount2 = int.Parse(details4[6]);
                             Console.Write("How many times did you accomplish it? ");
                             currentCount2 += int.Parse(Console.ReadLine());
 
@@ -193,7 +191,7 @@ class Program
                                 isCompleted2 = true;
                             }
 
-                            ChecklistGoal cGoal = new ChecklistGoal(goalName2, goalDesc2, goalPoints2, isCompleted2, bonusPoints2, countToBonus2, currentCount2);
+                            ChecklistGoal cGoal = new ChecklistGoal(details4[0], details4[1], int.Parse(details4[2]), isCompleted2, bonusPoints2, countToBonus2, currentCount2);
                             goals[targetGoal-1] = cGoal.RepresentGoal();
                             serializedGoals[targetGoal-1] = cGoal.SerializeGoal();
                             break;
