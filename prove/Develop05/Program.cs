@@ -106,7 +106,7 @@ class Program
                             isFirstLine = false;
                             continue;
                         }
-                        
+
                         string[] parts = line.Split(':');
                         string goalType = parts[0];
                         string goalDetails = parts[1];
@@ -203,6 +203,7 @@ class Program
                             ChecklistGoal cGoal = new ChecklistGoal(details4[0], details4[1], int.Parse(details4[2]), isCompleted2, bonusPoints2, countToBonus2, currentCount2);
                             goals[targetGoal-1] = cGoal.RepresentGoal();
                             serializedGoals[targetGoal-1] = cGoal.SerializeGoal();
+                            points += cGoal.GetGoalPoints();
                             break;
 
                         default:
