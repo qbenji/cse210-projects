@@ -70,10 +70,10 @@ class Program
 
                 case 3: // Save Goals
                     Console.WriteLine("Enter the desired filename (.txt will be added automatically): ");
-                    string filename = Console.ReadLine();
-                    filename = $"{filename}.txt";
+                    string saveFileName = Console.ReadLine();
+                    saveFileName = $"{saveFileName}.txt";
 
-                    using (StreamWriter outputFile = new StreamWriter(filename))
+                    using (StreamWriter outputFile = new StreamWriter(saveFileName))
                     {
                         outputFile.WriteLine(points);
                         foreach (String goal in serializedGoals)
@@ -84,7 +84,54 @@ class Program
                     break;
 
                 case 4: // Load Goals
-                    
+                    goals.Clear();
+                    serializedGoals.Clear();
+
+                    Console.WriteLine("Enter the filename you wish to load (.txt will be added automatically): ");
+                    string loadFileName = Console.ReadLine();
+                    loadFileName = $"{loadFileName}.txt";     
+
+                    string[] lines = System.IO.File.ReadAllLines(loadFileName);
+
+                    foreach (string line in lines)
+                    {
+                        string[] parts = line.Split(':');
+                        string goalType = parts[0];
+                        string goalDetails = parts[1];
+
+                        string[] details = goalDetails.Split(',');
+                        string goalName = details[0];
+                        string goalDesc = details[1];
+                        int goalPoints = int.Parse(details[2]);
+                        bool isCompleted = bool.Parse(details[3]);
+                        int bonusPoints = int.Parse(details[4]);
+                        int countToBonus = int.Parse(details[5]);
+                        int currentCount = int.Parse(details[6]);
+
+                        switch (goalType)
+                        {
+                            case "SimpleGoal":
+                                SimpleGoal sGoal = new SimpleGoal(goalName, goalDesc, goalPoints, isCompleted);
+                                goals.Add(sGoal.RepresentGoal());
+                                serializedGoals.Add(sGoal.SerializeGoal());                                
+                                break;
+
+                            case "EternalGoal":
+                                EternalGoal eGoal = new EternalGoal(goalName, goalDesc, goalPoints, isCompleted);
+                                goals.Add(eGoal.RepresentGoal());
+                                serializedGoals.Add(eGoal.SerializeGoal());
+                                break;
+                            
+                            case "ChecklistGoal":
+                                ChecklistGoal cGoal = new ChecklistGoal(goalName, goalDesc, goalPoints, isCompleted, bonusPoints, countToBonus, currentCount);
+                                goals.Add(cGoal.RepresentGoal());
+                                serializedGoals.Add(cGoal.SerializeGoal());
+                                break;
+
+                            default:
+                                break;
+                        }
+                    }               
                     break;
 
                 case 5: // Record Event
@@ -92,11 +139,10 @@ class Program
                     break;
 
                 case 6: // Quit
-                    
+                    Console.WriteLine("\nYou are now exiting the program. Goodbye.");
                     break;
 
-                default: // Invalid Choice
-                    
+                default: // Invalid Choice                    
                     break;
             }
         }

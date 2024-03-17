@@ -8,5 +8,5 @@ public class SimpleGoal :Goal
     {
         return $"SimpleGoal:{GetGoalName()},{GetGoalDesc()},{GetGoalPoints()},{GetIsCompleted()}";
     }
-    
+
 }
