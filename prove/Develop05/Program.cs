@@ -16,7 +16,6 @@ class Program
         
         while (choice != 4)
         {   
-            Console.Clear();
             Console.WriteLine($"You have {points} points.\n");
             Console.WriteLine("Menu Options:");
             Console.Write("\n  1. Create New Goal\n  2. List Goals\n  3. Save Goals\n  4. Load Goals\n  5. Record Event\n  6. Quit\n> ");
@@ -28,7 +27,7 @@ class Program
                 case 1: // Create New Goal
                     
                     Console.Clear();
-                    Console.WriteLine("The types of Goals are:\n  1. Simple Goal\n  2. Eternal Goal\n  3. Checklist Goal\n\nWhich type of goal would you like to create?");
+                    Console.Write("The types of Goals are:\n  1. Simple Goal\n  2. Eternal Goal\n  3. Checklist Goal\n\nWhich type of goal would you like to create? >");
                     choice2 = int.Parse(Console.ReadLine());
                     switch (choice2)
                     {
@@ -61,6 +60,8 @@ class Program
                     break;
 
                 case 2: // List Goals
+                    
+                    Console.Clear();
                     int i = 0;
                     foreach (String goal in goals)
                     {
@@ -70,6 +71,7 @@ class Program
                     break;
 
                 case 3: // Save Goals
+                    Console.Clear();
                     Console.WriteLine("Enter the desired filename (.txt will be added automatically): ");
                     string saveFileName = Console.ReadLine();
                     saveFileName = $"{saveFileName}.txt";
@@ -85,6 +87,8 @@ class Program
                     break;
 
                 case 4: // Load Goals
+                    
+                    Console.Clear();
                     goals.Clear();
                     serializedGoals.Clear();
 
@@ -137,6 +141,7 @@ class Program
 
                 case 5: // Record Event
                     
+                    Console.Clear();
                     int i2 = 0;
                     foreach (String goal in goals)
                     {
@@ -198,6 +203,7 @@ class Program
                     break;
 
                 case 6: // Quit
+                    Console.Clear();
                     Console.WriteLine("\nYou are now exiting the program. Goodbye.");
                     break;
 
