@@ -7,12 +7,13 @@ class Program
         Console.Clear();
         int choice = 0;
         int points = 0;
-        Console.Write($"You have {points} points.");
+        Console.Write("Welcome to the Goal-Points Tracker. Press enter to begin");
         Console.ReadLine();
         
         while (choice != 4)
         {   
             Console.Clear();
+            Console.WriteLine($"You have {points} points.\n");
             Console.WriteLine("Menu Options:");
             Console.Write("\n  1. Create New Goal\n  2. List Goals\n  3. Save Goals\n  4. Load Goals\n  5. Record Event\n  6. Quit\n> ");
             choice = int.Parse(Console.ReadLine());
@@ -27,16 +28,19 @@ class Program
                     choice2 = int.Parse(Console.ReadLine());
                     switch (choice2)
                     {
-                        case 1:         // Simple Goal
-
+                        case 1:         // Create Simple Goal
+                            SimpleGoal sGoal = new SimpleGoal("Simple Goal", "This is a simple goal.",0,false);
+                            sGoal.CreateGoal();
                             break;
 
-                        case 2:         // Eternal Goal
-
+                        case 2:         // Create Eternal Goal
+                            EternalGoal eGoal = new EternalGoal("Simple Goal", "This is a simple goal.",0,false);
+                            eGoal.CreateGoal();
                             break;
 
-                        case 3:         // Checklist Goal
-                           
+                        case 3:         // Create Checklist Goal
+                            ChecklistGoal cGoal = new ChecklistGoal("Simple Goal", "This is a simple goal.",0,false,0,0,0);
+                            cGoal.CreateGoal();                           
                             break;
 
                         default:        // Invalid Choice
