@@ -44,7 +44,7 @@ public class ChecklistGoal : Goal
 
     public override string      SerializeGoal()     // serialize goal as string
     {
-        return $"ChecklistGoal:{GetGoalName()},{GetGoalDesc()},{GetGoalPoints()},{GetBonusPoints()},{GetCountToBonus()},{GetCurrentCount()}";
+        return $"ChecklistGoal:{GetGoalName()},{GetGoalDesc()},{GetGoalPoints()},{GetIsCompleted()},{GetBonusPoints()},{GetCountToBonus()},{GetCurrentCount()}";
     } 
 
     public int GetCountToBonus()   // get count to bonus
