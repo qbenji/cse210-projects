@@ -16,7 +16,7 @@ class Program
         
         while (choice != 6)
         {   
-            Console.WriteLine($"You have {points} points.\n");
+            Console.WriteLine($"\nYou have {points} points.\n");
             Console.WriteLine("Menu Options:");
             Console.Write("\n  1. Create New Goal\n  2. List Goals\n  3. Save Goals\n  4. Load Goals\n  5. Record Event\n  6. Quit\n> ");
             choice = int.Parse(Console.ReadLine());
