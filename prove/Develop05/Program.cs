@@ -13,6 +13,7 @@ class Program
         Console.ReadLine();
         List<String> goals = new List<string>();
         List<String> serializedGoals = new List<string>();
+        Console.Clear();
         
         while (choice != 6)
         {   
