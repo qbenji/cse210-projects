@@ -1,4 +1,4 @@
-0
-SimpleGoal:Read Scripture,BoM,50,False
+10050
+SimpleGoal:Read Scripture,BoM,50,True
 EternalGoal:Be good father,I love my daughter,10000
-ChecklistGoal:Go to church,everyday,10,false,9999999,365,0
+ChecklistGoal:Go to church,everyday,10,False,9999999,365,0
