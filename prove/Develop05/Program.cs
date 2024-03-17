@@ -110,9 +110,6 @@ class Program
                         string goalDesc = details[1];
                         int goalPoints = int.Parse(details[2]);
                         bool isCompleted = bool.Parse(details[3]);
-                        int bonusPoints = int.Parse(details[4]);
-                        int countToBonus = int.Parse(details[5]);
-                        int currentCount = int.Parse(details[6]);
 
                         switch (goalType)
                         {
@@ -129,6 +126,10 @@ class Program
                                 break;
                             
                             case "ChecklistGoal":
+                                string[] details0 = goalDetails.Split(',');
+                                int bonusPoints = int.Parse(details0[4]);
+                                int countToBonus = int.Parse(details0[5]);
+                                int currentCount = int.Parse(details0[6]);                            
                                 ChecklistGoal cGoal = new ChecklistGoal(goalName, goalDesc, goalPoints, isCompleted, bonusPoints, countToBonus, currentCount);
                                 goals.Add(cGoal.RepresentGoal());
                                 serializedGoals.Add(cGoal.SerializeGoal());
