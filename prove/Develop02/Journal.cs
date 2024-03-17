@@ -64,8 +64,6 @@ public class Journal
         Console.WriteLine($"Journal saved to {filename}");
     }
 
-
-
     public void LoadEntries()
     {
         Console.Write("Enter the desired filename to load the journal from: ");

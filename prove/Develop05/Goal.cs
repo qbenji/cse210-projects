@@ -14,6 +14,11 @@ public class Goal
         _goalPoints = goalPoints;
     }
 
+    public void     DisplayGoal()                   // display goal
+    {
+        Console.WriteLine($"{_goalNum}. {_goalName} ({_goalType}) - {_goalDesc} ({_goalPoints} points)");
+    }
+
     public string   GetGoalName()                   // get goal name
     {
         return _goalName;
