@@ -21,5 +21,21 @@ class Program
         v3.AddComment("StickmanCorp","You should have enchanted the fork with 'Health Absorb' and use it to eat your enemies.");
         v3.AddComment("antivire","Missed opportunity to name your fork wielding orc... Forc");
         v3.AddComment("stupidthefish4981","With one upgrade, he doubled his forks damage. That's impressive");
+
+        // Add Videos to List
+        videos.Add(v1);
+        videos.Add(v2);
+        videos.Add(v3);
+
+        // Display Videos
+        foreach (var video in videos)
+        {
+            Console.WriteLine($"{video.GetTitle()} by {video.GetAuthor()} ({video.GetLenSeconds()} seconds & {video.GetNumComments()} comments)");
+            Console.WriteLine("<<Comments>>");
+            foreach (var comment in video.GetComments())
+            {
+                
+            }
+        }
     }
 }
