@@ -16,9 +16,10 @@ public class Video
         _comments = new List<Comment>();
     }
 
-    public void AddComment(Comment comment)     // add comment
+    public void AddComment(string name, string comment)     // add comment
     {
-        _comments.Add(comment);
+        Comment _comment = new Comment(name,comment);
+        _comments.Add(_comment);
     }
 
     public int GetNumComments()                 // add comment
