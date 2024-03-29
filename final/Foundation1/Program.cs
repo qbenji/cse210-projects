@@ -31,7 +31,7 @@ class Program
         foreach (var video in videos)
         {
             Console.WriteLine("________________________________________________________________________________________________________________");
-            Console.WriteLine($"{video.GetTitle()} by {video.GetAuthor()} ({video.GetLenSeconds()} seconds & {video.GetNumComments()} comments)\n");
+            Console.WriteLine($"{video.GetTitle()} by {video.GetAuthor()}\n   ({video.GetLenSeconds()} seconds & {video.GetNumComments()} comments)\n");
 
             Console.WriteLine("<<Comments>>");
             foreach (var comment in video.GetComments())
