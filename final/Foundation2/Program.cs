@@ -9,14 +9,14 @@ class Program
 
         List<Products> p1 = new List<Products>();
         p1.Add(new Products("Trash Can", "T01", 19.99, 1));
-        p1.Add(new Products("Trash Bag", "B09", 7.99, 2));
+        p1.Add(new Products("Trash Bag", "B09", 7.99, 1));
 
         Order o1 = new Order(c1, p1);
         Console.Clear();
         Console.WriteLine("Order 1 Summary...\n");
         Console.WriteLine(o1.PackingLabel());
         Console.WriteLine(o1.ShippingLabel());
-        
+
         Console.WriteLine("\nTotal Cost: $" + o1.TotalCost());
     }
 }
