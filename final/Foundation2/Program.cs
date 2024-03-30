@@ -12,10 +12,11 @@ class Program
         p1.Add(new Products("Trash Bag", "B09", 7.99, 2));
 
         Order o1 = new Order(c1, p1);
-
-        Console.WriteLine("Order 1 Summary...");
+        Console.Clear();
+        Console.WriteLine("Order 1 Summary...\n");
         Console.WriteLine(o1.PackingLabel());
         Console.WriteLine(o1.ShippingLabel());
-        Console.WriteLine("Total Cost: $" + o1.TotalCost());
+        
+        Console.WriteLine("\nTotal Cost: $" + o1.TotalCost());
     }
 }
