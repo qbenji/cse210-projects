@@ -12,9 +12,9 @@ public class Lecture : Event
         _capacity = capacity;
     }
 
-    public override string StandardDetails()
+    public override string FullDetails()
     {
-        return $"{GetEventType()} - {_title}\n{_description}\n\n  {_address}\n   {_date} @ {_time}\n\nSpeaker: {_speaker}\nCapacity: {_capacity}";
+        return $"{GetEventType()} - {GetTitle()}\n{GetDescription()}\n\n  {GetAddress()}\n   {GetDate()} @ {GetTime()}\n\nSpeaker: {_speaker}\nCapacity: {_capacity}";
     }
 
     public string GetSpeaker()                  // get speaker
