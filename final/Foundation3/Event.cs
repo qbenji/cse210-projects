@@ -9,13 +9,30 @@ public class Event
     private DateTime _date;
     private TimeSpan _time;
     private Address _address;
-    public Event(string title, string description, DateTime date, TimeSpan time, Address address)
+    private string _eventType;
+    public Event(string title, string description, DateTime date, TimeSpan time, Address address, string eventType)   // constructor
     {
         _title = title;
         _description = description;
         _date = date;
         _time = time;
         _address = address;
+        _eventType = eventType;
+    }
+
+    public string StandardDetails()
+    {
+        return $"{_title}\n{_description}\n\n  {_address}\n   {_date} @ {_time}";
+    }
+
+    public virtual string FullDetails()
+    {
+        return $"{_eventType} - {_title}\n{_description}\n\n  {_address}\n   {_date} @ {_time}";
+    }
+
+    public string SortDescription()
+    {
+        return $"{_eventType}\n{_title}\n{_date}";
     }
 
     public string GetTitle()                        // get title
@@ -43,6 +60,11 @@ public class Event
         return _address;
     }
 
+    public string GetEventType()                    // get event type
+    {
+        return _eventType;
+    }
+
     public void SetTitle(string title)              // set title
     {
         _title = title;
@@ -68,4 +90,8 @@ public class Event
         _address = address;
     }
 
+    public void SetEventType(string eventType)      // set event type
+    {
+        _eventType = eventType;
+    }
 }
