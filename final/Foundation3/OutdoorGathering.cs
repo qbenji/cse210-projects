@@ -18,6 +18,14 @@ public class OutdoorGathering : Event
         _windSpeed = windSpeed;
     }
 
+    public override string FullDetails()
+    {
+        return $"{GetEventType()} - {GetTitle()}\n" 
+        + $"{GetDescription()}\n\n  {GetAddress()}\n   {GetDate()} @ {GetTime()}\n\n"
+        + $"Temperature: {_temperature}\nSky: {_sky}\nHumidity: {_humidity}\n" 
+        + $"Precipitation: {_precipitation}\nWind Speed: {_windSpeed}";
+    }
+
     public int GetTemperature()         // get temperature
     {
         return _temperature;
