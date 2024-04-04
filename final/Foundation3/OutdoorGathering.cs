@@ -46,7 +46,7 @@ public class OutdoorGathering : Event
         return _precipitation;
     }
 
-public int GetWindSpeed()                               // get windSpeed
+    public int GetWindSpeed()                           // get windSpeed
     {
         return _windSpeed;
     }
