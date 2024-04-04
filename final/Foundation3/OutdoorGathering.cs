@@ -18,7 +18,7 @@ public class OutdoorGathering : Event
         _windSpeed = windSpeed;
     }
 
-    public override string FullDetails()
+    public override string FullDetails()                // get full details
     {
         return $"{GetEventType()} - {GetTitle()}\n" 
         + $"{GetDescription()}\n\n  {GetAddress()}\n   {GetDate()} @ {GetTime()}\n\n"
@@ -26,52 +26,52 @@ public class OutdoorGathering : Event
         + $"Precipitation: {_precipitation}\nWind Speed: {_windSpeed}";
     }
 
-    public int GetTemperature()         // get temperature
+    public int GetTemperature()                         // get temperature
     {
         return _temperature;
     }
 
-    public string GetSky()              // get sky
+    public string GetSky()                              // get sky
     {
         return _sky;
     }
 
-    public int GetHumidity()            // get humidity
+    public int GetHumidity()                            // get humidity
     {
         return _humidity;
     }
 
-    public int GetPrecipitation()       // get precipitation
+    public int GetPrecipitation()                       // get precipitation
     {
         return _precipitation;
     }
 
-    public int GetWindSpeed()           // get windSpeed
+public int GetWindSpeed()                               // get windSpeed
     {
         return _windSpeed;
     }
     
-    public void SetTemperature(int temperature)      // set temperature
+    public void SetTemperature(int temperature)         // set temperature
     {
         _temperature = temperature;
     }
 
-    public void SetSky(string sky)                   // set sky
+    public void SetSky(string sky)                      // set sky
     {
         _sky = sky;
     }
 
-    public void SetHumidity(int humidity)            // set humidity
+    public void SetHumidity(int humidity)               // set humidity
     {
         _humidity = humidity;
     }
 
-    public void SetPrecipitation(int precipitation)  // set precipitation
+    public void SetPrecipitation(int precipitation)     // set precipitation
     {
         _precipitation = precipitation;
     }
 
-    public void SetWindSpeed(int windSpeed)         // set windSpeed
+    public void SetWindSpeed(int windSpeed)             // set windSpeed
     {
         _windSpeed = windSpeed;
     }
