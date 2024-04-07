@@ -20,17 +20,17 @@ public class Event
         _eventType = eventType;
     }
 
-    public string StandardDetails()
+    public string StandardDetails()                 // get standard details
     {
         return $"{_title}\n{_description}\n\n  {_address}\n   {_date} @ {_time}";
     }
 
-    public virtual string FullDetails()
+    public virtual string FullDetails()             // get full details
     {
         return $"{_eventType} - {_title}\n{_description}\n\n  {_address}\n   {_date} @ {_time}";
     }
 
-    public string SortDescription()
+    public string ShortDescription()                // get short description
     {
         return $"{_eventType}\n{_title}\n{_date}";
     }

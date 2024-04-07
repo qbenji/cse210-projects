@@ -14,5 +14,21 @@ class Program
         Event reception = new Reception("Ben and John's Reception", "Pride month is our favorite month", DateTime.Now, new TimeSpan(18, 0, 0), a2, "Reception","BeJo@gmail.com");
         Event outdoorGathering = new OutdoorGathering("Soccer", "It's the best sport", DateTime.Now, new TimeSpan(18, 0, 0), a3, "Outdoor Gathering", 76, "Sunny", 40, 2, 1);
         
+        // Event Messages
+        Console.WriteLine("\nLecture Messages:");
+        Console.WriteLine(lecture.StandardDetails());
+        Console.WriteLine(lecture.FullDetails());
+        Console.WriteLine(lecture.ShortDescription());
+
+        Console.WriteLine("\nReception Messages:");
+        Console.WriteLine(reception.StandardDetails());
+        Console.WriteLine(reception.FullDetails());
+        Console.WriteLine(reception.ShortDescription());
+        
+        Console.WriteLine("\nOutdoor Gathering Messages:");
+        Console.WriteLine(outdoorGathering.StandardDetails());
+        Console.WriteLine(outdoorGathering.FullDetails());
+        Console.WriteLine(outdoorGathering.ShortDescription());
+
     }
 }
