@@ -21,7 +21,7 @@ public class OutdoorGathering : Event
     public override string FullDetails()                // get full details
     {
         return $"{GetEventType()} - {GetTitle()}\n" 
-        + $"{GetDescription()}\n\n  {GetAddress()}\n   {GetDate()} @ {GetTime()}\n\n"
+        + $"{GetDescription()}\n\n  {GetAddress().SerializeAddress()}\n   {GetDate()} @ {GetTime()}\n\n"
         + $"Temperature: {_temperature}\nSky: {_sky}\nHumidity: {_humidity}\n" 
         + $"Precipitation: {_precipitation}\nWind Speed: {_windSpeed}";
     }

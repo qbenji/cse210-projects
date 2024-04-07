@@ -14,7 +14,7 @@ public class Lecture : Event
 
     public override string FullDetails()
     {
-        return $"{GetEventType()} - {GetTitle()}\n{GetDescription()}\n\n  {GetAddress()}\n   {GetDate()} @ {GetTime()}\n\nSpeaker: {_speaker}\nCapacity: {_capacity}";
+        return $"{GetEventType()} - {GetTitle()}\n{GetDescription()}\n\n  {GetAddress().SerializeAddress()}\n   {GetDate()} @ {GetTime()}\n\nSpeaker: {_speaker}\nCapacity: {_capacity}";
     }
 
     public string GetSpeaker()                  // get speaker

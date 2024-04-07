@@ -11,7 +11,7 @@ public class Reception : Event
 
     public override string FullDetails()
     {
-        return $"{GetEventType()} - {GetTitle()}\n{GetDescription()}\n\n  {GetAddress()}\n   {GetDate()} @ {GetTime()}\n\nRSVP Email: {_rsvpEmail}";
+        return $"{GetEventType()} - {GetTitle()}\n{GetDescription()}\n\n  {GetAddress().SerializeAddress()}\n   {GetDate()} @ {GetTime()}\n\nRSVP Email: {_rsvpEmail}";
     }
 
     public string GetRsvpEmail()
