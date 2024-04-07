@@ -5,21 +5,42 @@ abstract class Activity
     private DateTime _date;
     private int _durationMin;
 
-    public Activity(DateTime date, int durationMin)
+    public Activity(DateTime date, int durationMin) // constructor
     {
         _date = date;
         _durationMin = durationMin;
     }
 
-    public abstract double GetDistance();
-    public abstract double GetSpeed();
-    public abstract double GetPace();
+    public abstract double GetDistance();           // get distance
+    public abstract double GetSpeed();              // get speed
+    public abstract double GetPace();               // get pace
 
-    public virtual string GetSummary()
+    public virtual string GetSummary()              // get summary
     {
         return $"{_date:dd MMM yyyy} ({GetType().Name} {_durationMin} min): " +
                $"Distance {GetDistance():F1} km, " +
                $"Speed: {GetSpeed():F1} kph, " +
                $"Pace: {GetPace():F2} min per km";
     }
+
+    public DateTime GetDate()                       // get date
+    {
+        return _date;
+    }
+
+    public int GetDurationMin()                     // get durationMin
+    {
+        return _durationMin;
+    }
+
+    public void SetDate(DateTime date)              // set date
+    {
+        _date = date;
+    }
+
+    public void SetDurationMin(int durationMin)     // set durationMin
+    {
+        _durationMin = durationMin;
+    }
+
 }
