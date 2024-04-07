@@ -17,23 +17,23 @@ class Program
         // Event Messages
         Console.WriteLine("\n<<<<Lecture Standard Details>>>>\n");
         Console.WriteLine(lecture.StandardDetails());
-        Console.WriteLine("\n<<<<Lecture Full Details>>>>\\n");
+        Console.WriteLine("\n<<<<Lecture Full Details>>>>\n");
         Console.WriteLine(lecture.FullDetails());
-        Console.WriteLine("\n<<<<Lecture Short Description>>>>\\n");
+        Console.WriteLine("\n<<<<Lecture Short Description>>>>\n");
         Console.WriteLine(lecture.ShortDescription());
 
-        Console.WriteLine("\n<<<<Reception Standard Details>>>>\\n");
+        Console.WriteLine("\n<<<<Reception Standard Details>>>>\n");
         Console.WriteLine(reception.StandardDetails());
-        Console.WriteLine("\n<<<<Reception Full Details>>>>\\n");
+        Console.WriteLine("\n<<<<Reception Full Details>>>>\n");
         Console.WriteLine(reception.FullDetails());
-        Console.WriteLine("\n<<<<Reception Short Description>>>>\\n");
+        Console.WriteLine("\n<<<<Reception Short Description>>>>\n");
         Console.WriteLine(reception.ShortDescription());
 
-        Console.WriteLine("\n<<<<Outdoor Gathering Standard Details>>>>\\n");
+        Console.WriteLine("\n<<<<Outdoor Gathering Standard Details>>>>\n");
         Console.WriteLine(outdoorGathering.StandardDetails());
-        Console.WriteLine("\n<<<<Outdoor Gathering Full Details>>>>\\n");
+        Console.WriteLine("\n<<<<Outdoor Gathering Full Details>>>>\n");
         Console.WriteLine(outdoorGathering.FullDetails());
-        Console.WriteLine("\n<<<<Outdoor Gathering Short Description>>>>\\n");
+        Console.WriteLine("\n<<<<Outdoor Gathering Short Description>>>>\n");
         Console.WriteLine(outdoorGathering.ShortDescription());
     }
 }
