@@ -11,17 +11,17 @@ public class Activity
         _durationMin = durationMin;
     }
 
-    public virtual double GetDistance()            // get distance
+    public virtual double GetDistance()             // get distance
     {
         return 0;
     }
 
-    public virtual double GetSpeed()               // get speed
+    public virtual double GetSpeed()                // get speed
     {
         return 0;
     }
 
-    public virtual double GetPace()               // get pace
+    public virtual double GetPace()                 // get pace
     {
         return 0;
     }
