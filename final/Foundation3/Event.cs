@@ -27,7 +27,7 @@ public class Event
 
     public virtual string FullDetails()             // get full details
     {
-        return $"{_eventType} - {_title}\n{_description}\n\n  {_address}\n   {_date} @ {_time}";
+        return $"{_eventType} - {_title}\n{_description}\n\n  {_address.SerializeAddress()}\n   {_date} @ {_time}";
     }
 
     public string ShortDescription()                // get short description
