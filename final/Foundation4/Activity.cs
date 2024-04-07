@@ -1,6 +1,6 @@
 using System;
 
-abstract class Activity
+public class Activity
 {
     private DateTime _date;
     private int _durationMin;
@@ -11,9 +11,20 @@ abstract class Activity
         _durationMin = durationMin;
     }
 
-    public abstract double GetDistance();           // get distance
-    public abstract double GetSpeed();              // get speed
-    public abstract double GetPace();               // get pace
+    public virtual double GetDistance()            // get distance
+    {
+        return 0;
+    }
+
+    public virtual double GetSpeed()               // get speed
+    {
+        return 0;
+    }
+
+    public virtual double GetPace()               // get pace
+    {
+        return 0;
+    }
 
     public virtual string GetSummary()              // get summary
     {
