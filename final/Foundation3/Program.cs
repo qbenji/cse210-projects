@@ -15,20 +15,25 @@ class Program
         Event outdoorGathering = new OutdoorGathering("Soccer", "It's the best sport", DateTime.Now, new TimeSpan(18, 0, 0), a3, "Outdoor Gathering", 76, "Sunny", 40, 2, 1);
         
         // Event Messages
-        Console.WriteLine("\nLecture Messages:");
+        Console.WriteLine("\nLecture Standard Details:\n");
         Console.WriteLine(lecture.StandardDetails());
+        Console.WriteLine("\nLecture Full Details:\n");
         Console.WriteLine(lecture.FullDetails());
+        Console.WriteLine("\nLecture Short Description:\n");
         Console.WriteLine(lecture.ShortDescription());
 
-        Console.WriteLine("\nReception Messages:");
+        Console.WriteLine("\nReception Standard Details:\n");
         Console.WriteLine(reception.StandardDetails());
+        Console.WriteLine("\nReception Full Details:\n");
         Console.WriteLine(reception.FullDetails());
+        Console.WriteLine("\nReception Short Description:\n");
         Console.WriteLine(reception.ShortDescription());
-        
-        Console.WriteLine("\nOutdoor Gathering Messages:");
-        Console.WriteLine(outdoorGathering.StandardDetails());
-        Console.WriteLine(outdoorGathering.FullDetails());
-        Console.WriteLine(outdoorGathering.ShortDescription());
 
+        Console.WriteLine("\nOutdoor Gathering Standard Details:\n");
+        Console.WriteLine(outdoorGathering.StandardDetails());
+        Console.WriteLine("\nOutdoor Gathering Full Details:\n");
+        Console.WriteLine(outdoorGathering.FullDetails());
+        Console.WriteLine("\nOutdoor Gathering Short Description:\n");
+        Console.WriteLine(outdoorGathering.ShortDescription());
     }
 }
